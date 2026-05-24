@@ -35,6 +35,10 @@ A simple usage case would be:
     <div id="container"></div>
     <script>
       var container = document.getElementById("container");
+      <div style="display: flex; width: 300px">
+        <button onclick="expandAll()">Expand All</button>
+        <button onclick="collapseAll()">Collapse All</button>
+      </div>
       var data = {
         sport: "Formula 1",
         GP: "Brazilian GP - Interlagos",
@@ -65,6 +69,14 @@ A simple usage case would be:
       };
       var jsonGrid = new JSONGrid(data, container);
       jsonGrid.render();
+
+      function expandAll() {
+        jsonGrid.expandAll();
+      }
+
+      function collapseAll() {
+        jsonGrid.collapseAll();
+      }
     </script>
   </body>
   </html>
