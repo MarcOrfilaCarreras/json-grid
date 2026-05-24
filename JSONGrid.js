@@ -185,4 +185,58 @@ JSONGrid.prototype.render = function () {
   this.container.classList.add(DOMHelper.JSON_GRID_CONTAINER_CLASSNAME);
 };
 
+JSONGrid.prototype.expandAll = function () {
+  if (!this.container || !this.data) {
+    return;
+  }
+
+  var expanders = this.container.querySelectorAll('.expander');
+
+  expanders.forEach(function (expander) {
+    var tableId = expander.getAttribute(
+      DOMHelper.EXPANDER_TARGET_ATTRIBUTE
+    );
+
+    var table = document.getElementById(tableId);
+
+    if (
+      table &&
+      table.classList.contains(
+        DOMHelper.TABLE_SHRINKED_CLASSNAME
+      )
+    ) {
+      DOMHelper.onExpanderClick({
+        target: expander
+      });
+    }
+  });
+};
+
+JSONGrid.prototype.collapseAll = function () {
+  if (!this.container || !this.data) {
+    return;
+  }
+
+  var expanders = this.container.querySelectorAll('.expander');
+
+  expanders.forEach(function (expander) {
+    var tableId = expander.getAttribute(
+      DOMHelper.EXPANDER_TARGET_ATTRIBUTE
+    );
+
+    var table = document.getElementById(tableId);
+
+    if (
+      table &&
+      !table.classList.contains(
+        DOMHelper.TABLE_SHRINKED_CLASSNAME
+      )
+    ) {
+      DOMHelper.onExpanderClick({
+        target: expander
+      });
+    }
+  });
+};
+
 window.JSONGrid = JSONGrid;

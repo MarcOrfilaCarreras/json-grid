@@ -1,8 +1,8 @@
 # JSON Grid
 
-JSON Grid is a open source javascript library meant to be run in the browser that aims to allow users to convert JSON objects into user-friendly and interactive tables/grids.
+JSON Grid is an open source Javascript library meant to be run in the browser that aims to allow users to convert JSON objects into user-friendly and interactive tables/grids.
 
-## Instalation
+## Installation
 
 In order to install, just require the package through `unpkg` (https://unpkg.com/@araujoigor/json-grid) and use the `JSONGrid` object to generate your grid.
 
@@ -72,14 +72,14 @@ A simple usage case would be:
 
 ## API
 
-The functions that are meant to be used publicily are:
+The functions that are meant to be used publicly are:
 
 ### `JSONGrid(data, container)`
 
 > The constructor receives two arguments: `data` and `container`.
 
 The `data` parameter is expected to be JSON object.
-The `container` paramenter is expected to be a DOM node and will be used to render the contents.
+The `container` parameter is expected to be a DOM node and will be used to render the contents.
 
 After the object is created, you can use the `render` function to render the grid.
 
@@ -90,3 +90,12 @@ Used to render grid based on the given `data` to the given `container`.
 ### `JSONGrid.prototype.generateDOM`
 
 Returns the grid DOM without rendering it to the `container`.
+
+### `JSONGrid.prototype.expandAll`
+
+Expands all collapsed tables and nested grids.
+
+
+### `JSONGrid.prototype.collapseAll`
+
+Collapses all expanded tables and nested grids.
